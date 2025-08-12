@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://676ogq5dwbhm"]
+
+[ext_resource type="Texture2D" uid="uid://c7lsbybsixrf4" path="res://assets/Tiny Swords (Update 010)/Factions/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="1_bab8k"]
+[ext_resource type="Script" uid="uid://bctp7p5kqonp2" path="res://scripts/pawn.gd" id="1_ccfo0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccfo0"]
+atlas = ExtResource("1_bab8k")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqwak"]
+atlas = ExtResource("1_bab8k")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w61pg"]
+atlas = ExtResource("1_bab8k")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gq48"]
+atlas = ExtResource("1_bab8k")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y1472"]
+atlas = ExtResource("1_bab8k")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojbo2"]
+atlas = ExtResource("1_bab8k")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_otoq7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccfo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eqwak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w61pg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gq48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y1472")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojbo2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bab8k"]
+
+[node name="pawn" type="CharacterBody2D"]
+script = ExtResource("1_ccfo0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_otoq7")
+frame_progress = 0.874567
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 16)
+shape = SubResource("CircleShape2D_bab8k")
